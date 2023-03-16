@@ -16,8 +16,22 @@ body {
   width: 500px;
   height: 100px;
 }
+
+@media only screen and (max-width: 768px) {
+  .button-container {
+    width: 80%;
+    height: 80px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .button-container {
+    width: 90%;
+    height: 60px;
+  }
+}
+
 .button {
-  /* background-color: red; */
   font-weight: bold;
   width: 100%;
   height: 100%;
@@ -26,7 +40,6 @@ body {
   text-align: center;
   line-height: 100px;
   position: relative;
-
   color: white;
   text-shadow: 0 3px black;
   text-transform: capitalize;
@@ -34,20 +47,28 @@ body {
   transition-duration: 0.5s;
   overflow: hidden;
   z-index: 1;
-  /* border: 1px solid #999; */
   border-radius: 100px;
   box-shadow: 0 0 10px #000, 0 0 20px #000;
 }
 
-.button:hover {
-  /* text-shadow: 0 0 3px white; */
-  /* box-shadow: 0 0 30px red;
-  width: 700px; */
-  /* height: 200px; */
-  /* line-height: 200px;
-  font-size: 60px; */
-  /* background-color: aquamarine; */
+@media only screen and (max-width: 768px) {
+  .button {
+    font-size: 30px;
+    line-height: 80px;
+  }
 }
+
+@media only screen and (max-width: 480px) {
+  .button {
+    font-size: 20px;
+    line-height: 60px;
+  }
+}
+
+.button:hover {
+  text-shadow: 0 0 3px white;
+}
+
 .button::before,
 .button::after {
   position: absolute;
@@ -59,21 +80,25 @@ body {
   z-index: -1;
   box-shadow: 0 0 10px #000;
 }
+
 .button::before {
   left: -110%;
   background-color: #e04e0e;
   transition-property: all;
   transition-duration: 0.5s;
 }
+
 .button::after {
   right: -110%;
   background-color: #0a486c;
   transition-property: all;
   transition-duration: 0.5s;
 }
+
 .button:hover::before {
   left: -49%;
 }
+
 .button:hover::after {
   right: -49%;
 }
